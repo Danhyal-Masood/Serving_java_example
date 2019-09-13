@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.10'
+}
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+    maven { url "https://plugins.gradle.org/m2/" }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    implementation 'org.bytedeco:javacv-platform:1.5.1'
+    implementation group: 'org.bytedeco', name: 'opencv-platform', version: '4.1.0-1.5.1'
+    implementation 'com.konghq:unirest-java:2.3.16'
+    compile "org.deeplearning4j:deeplearning4j-core:1.0.0-beta4"
+    compile "org.nd4j:nd4j-native-platform:1.0.0-beta4"
+    compile group: 'org.bytedeco', name: 'openblas', version: '0.3.6-1.5.1'
+    compile group: 'org.bytedeco', name: 'leptonica', version: '1.78.0-1.5.1'
+    compile group: 'com.konghq', name: 'unirest-objectmapper-jackson', version: '2.3.16'
+    compile group: 'net.dongliu', name: 'requests', version: '5.0.7'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+    compile group: 'com.google.guava', name: 'guava', version: '11.0.2'
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.13'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.10.0.pr1'
+    implementation 'one.util:streamex:0.7.0'
+    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly'
+
+
+
+
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2019.2.1'
+}
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
